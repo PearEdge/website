@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PearEdge Technologies Limited</title>
+  <meta name="description" content="PearEdge Technologies Limited — Your Trusted IT Partner. IT Sales, Support, and Training Solutions for Schools, SMEs, and Hotels." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --accent:#6EE7B7;
+      --accent-2:#60A5FA;
+      --muted: #94A3B8;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg) 0%, #071026 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:48px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo { width: 100px; height: auto; border-radius:16px; object-fit:contain; box-shadow:0 8px 24px rgba(6,11,30,0.4);}
+    .brand h1 { font-size:22px; line-height:1.2; margin:0; }
+    .tagline { font-size:13px; color:var(--muted); }
+
+    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
+    nav a.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#012;padding:8px 14px}
+    .mobile-toggle{display:none}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 400px;gap:32px;align-items:center;padding:28px 0}
+    .hero-card{background:var(--card);padding:28px;border-radius:16px;box-shadow:0 8px 40px rgba(3,7,18,0.6);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.03)}
+    .eyebrow{display:inline-block;padding:6px 10px;background:var(--glass);border-radius:999px;color:var(--accent);font-weight:700;font-size:12px}
+    h2{font-size:32px;margin:12px 0 8px}
+    p.lead{color:var(--muted);margin-bottom:16px; line-height:1.8}
+    .actions{display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;font-weight:700; cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#012}
+    .btn.outline{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+    .btn.download{background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #012;}
+
+    /* cards grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* sections */
+    section{padding:48px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    .section-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .programs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+    .program{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:12px}
+    .safety{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .safety pre{white-space:pre-wrap;font-size:13px;color:var(--muted);margin:0}
+
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .programs{grid-template-columns:1fr}
+      .safety{grid-template-columns:1fr}
+
+      nav{display:none; flex-direction:column; background: rgba(15,23,36,0.98); position:absolute; top:70px; right:20px; left:20px; border-radius:12px; padding:12px; box-shadow:0 6px 20px rgba(0,0,0,0.6); z-index:1000;}
+      nav a{display:block;text-align:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+      nav a:last-child{border-bottom:none;}
+      .mobile-toggle{display:inline-flex; z-index:1100;}
+      nav.open{display:flex; animation:dropdown 0.3s ease forwards;}
+      @keyframes dropdown{from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:translateY(0);}}
+    }
+
+    @media (max-width:640px){ .grid{grid-template-columns:1fr} }
+
+    .muted{color:var(--muted)}
+    .chip{display:inline-block;padding:6px 10px;background:rgba(255,255,255,0.02);border-radius:999px;font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="p.png" alt="PearEdge Logo" class="logo" />
+        <div>
+          <h1>PearEdge Technologies Limited</h1>
+          <div class="tagline">Your Trusted IT Partner</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Contact Us</a>
+      </nav>
+      <button class="mobile-toggle btn outline" aria-expanded="false" onclick="toggleNav()">Menu</button>
+    </header>
+
+    <main id="home">
+      <div class="hero">
+        <div class="hero-card">
+          <span class="eyebrow">PearEdge Technologies Ltd.</span>
+          <h2>Reliable IT Solutions for Schools, SMEs, and Hotels</h2>
+          <p class="lead">We provide top-quality IT sales, support, and training solutions that help organizations run efficiently and securely.</p>
+          <p class="lead">From affordable computers to network setups and staff IT training, PearEdge Technologies ensures technology works for you, not against you.</p>
+          <div class="actions">
+            <a class="btn primary" href="#services">Explore Services</a>
+            <a class="btn outline" href="#contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <section id="services">
+        <div class="section-head">
+          <h2>Our Services</h2>
+          <div class="chip">Reliable • Affordable • Professional</div>
+        </div>
+        <div class="programs">
+          <div class="program">
+            <h3>IT Sales & Procurement</h3>
+            <ul class="muted">
+              <li>Desktops, Laptops, Tablets</li>
+              <li>IT Accessories: Routers, Switches, Cables, Peripherals</li>
+              <li>Licensing & Subscriptions: Windows, Office Suite, Antivirus</li>
+              <li>Enterprise Software & Bulk Procurement</li>
+            </ul>
+          </div>
+          <div class="program">
+            <h3>IT Support & Maintenance</h3>
+            <ul class="muted">
+              <li>Hardware & Software Installation</li>
+              <li>Onsite Repairs & Preventive Maintenance</li>
+              <li>Network Setup: LAN, WAN, Wi-Fi</li>
+              <li>Server Management & Cloud Solutions</li>
+              <li>Firewall, Security & Backup Solutions</li>
+            </ul>
+          </div>
+          <div class="program">
+            <h3>Training & Digital Literacy</h3>
+            <ul class="muted">
+              <li>Corporate IT Training: Basic to Advanced</li>
+              <li>Staff Upskilling Programs</li>
+              <li>Workshops on Office Productivity Tools</li>
+              <li>Custom Programs for Schools and SMEs</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <div class="section-head">
+          <h2>About PearEdge Technologies</h2>
+          <div class="chip">Innovative • Reliable • African-Grown</div>
+        </div>
+        <p class="lead">
+          PearEdge Technologies Limited is a leading IT solutions provider in Nigeria, committed to helping schools, SMEs, and hotels optimize their technology infrastructure. 
+          We combine high-quality IT products, expert technical support, and practical training programs to ensure our clients maximize efficiency and security.
+        </p>
+        <p class="lead">
+          Our mission is to make technology accessible, reliable, and impactful, empowering organizations to focus on growth while we handle the technical challenges.
+        </p>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="section-head">
+          <h2>Contact Us</h2>
+          <div class="chip">We’re here to help</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px">
+          <div class="hero-card">
+            <h3>Get in Touch</h3>
+            <p class="muted">Email: <strong>info.pearedge@gmail.com</strong></p>
+            <p class="muted">WhatsApp: <strong><a href="https://wa.me/2348103443614" target="_blank">+234 810 344 3614</a></strong></p>
+            <h4 style="margin-top:12px">Social Media</h4>
+            <ul class="muted">
+              <li><a href="https://www.youtube.com/@PearEdgeRoboticsandElectronics" target="_blank">YouTube</a></li>
+              <li><a href="https://www.facebook.com/PearEdgeRoboticsAndElectronics" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/pearedge_robotics_club" target="_blank">Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@pearedge_robotics_club" target="_blank">TikTok</a></li>
+            </ul>
+          </div>
+          <aside class="hero-card" style="display:flex;flex-direction:column;gap:10px">
+            <button class="btn primary" onclick="copyEmail()">Copy Email</button>
+            <button class="btn outline" onclick="openWhatsApp()">Open WhatsApp</button>
+            <a class="btn outline" href="mailto:info.pearedge@gmail.com">Send Email</a>
+            <div class="muted" style="margin-top:auto">© PearEdge Technologies Limited — Your Trusted IT Partner</div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">PearEdge Technologies Limited — Your Trusted IT Partner</div>
+      <div class="muted">Designed for schools, SMEs, and hotels • Nigeria</div>
+    </footer>
+
+  </div>
+
+  <script>
+    // mobile nav toggle
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.querySelector('nav');
+        const btn = document.querySelector('.mobile-toggle');
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', false);
+      });
+    });
+    function toggleNav() {
+      const nav = document.querySelector('nav');
+      const btn = document.querySelector('.mobile-toggle');
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+    // copy email helper
+    function copyEmail(){
+      navigator.clipboard && navigator.clipboard.writeText('info.pearedge@gmail.com')
+        .then(()=>{alert('Email copied to clipboard: info.pearedge@gmail.com')})
+        .catch(()=>{prompt('Copy email', 'info.pearedge@gmail.com')});
+    }
+    function openWhatsApp(){
+      window.open('https://wa.me/2348103443614', '_blank');
+    }
+  </script>
+</body>
+</html>
